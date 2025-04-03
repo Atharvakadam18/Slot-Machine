@@ -3,7 +3,7 @@ import random
 MAX_BET = 1000
 MIN_BET = 100
 
-symbols = "!@#$&"
+symbols = ["🪣", "🧻", "🏺", "🪬", "🧪", "🧨", "⚠️"]
 
 # This function is used to take some initial amount from the user 
 def deposit():
@@ -38,11 +38,14 @@ def get_bet():
 # This function spins the slot machine and generates 3 random value based on that it declares the result
 def spin(symbols, bet, balance):
     slot = [random.choice(symbols) for _ in range(3)]
-    print("Result:", " ".join(slot))
+    print("Result:", *slot)
 
     if slot[0] == slot[1] == slot[2]:
         balance += bet * 3
-        print(f"Congratulation, Jackpot!!! You won ₹{bet*3}")
+        print(f"Congratulation, Jackpot!!! You won ₹{bet * 3}")
+    elif slot[0] == slot[1] or slot[0] == slot[2] or slot[1] == slot[2]:
+        balance += bet * 2
+        print(f"Congratulation, you won {bet * 2}")
     else:
         print("Better Luck Next Time!!!")
         balance -= bet
