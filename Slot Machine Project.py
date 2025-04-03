@@ -3,7 +3,7 @@ import random
 MAX_BET = 1000
 MIN_BET = 100
 
-symbols = ["🪣", "🧻", "🏺", "🪬", "🧪", "🧨", "⚠️"]
+symbols = ["🪣", "🧻", "🏺", "🪬", "🧪", "🧨", "⚠️", "💵"]
 
 # This function is used to take some initial amount from the user 
 def deposit():
